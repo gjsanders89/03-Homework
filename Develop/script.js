@@ -10,7 +10,7 @@ function genPassword() {
   var length = charLength();
   var charString = writePassword();
   var product = "";
-
+  // For loop to generate a random password character by character until the length reaches the user-specified choice of length.
   for (i = 0; i <= length; i++) {
     randomNum = Math.min(Math.floor(Math.random() * 100), charString.length - 1)
     genPass += charString[randomNum];
@@ -33,9 +33,36 @@ function writePassword() {
   var charUpper = "abcdefghijklmnopqrstuvwxyz";
   var charLower = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var charNum = "1234567890";
-  var charSym = ``
+  var charSym = `!"#$%&'()*+,-./:;<=>?@[\]^_{|}~`;
 
   var charString = "";
+  var upperQ = confirm("Uppercase letters?");
+  var lowerQ = confirm("Lowercase letters?");
+  var numQ = confirm("Numbers?");
+  var symQ = confirm("Special characters?");
+
+  if (upperQ === true) {
+    charString += charUpper;
+  }
+  if (lowerQ === true) {
+    charString += charLower;
+  }
+  if (numQ === true) {
+    charString += charNum;
+  }
+  if (symQ === true) {
+    charString += charSym;
+  }
+  console.log(charString);
+  return charString;
+}
+
+// Displays the new password on the page for any curious onlookers.
+
+function displayPassword(password) {
+  var passText = document.querySelector("#password");
+  console.log(password);
+  password.value = password;
 }
 
 /* 
