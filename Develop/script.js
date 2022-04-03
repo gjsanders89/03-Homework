@@ -1,19 +1,18 @@
 // Assignment Code
 var genBtn = document.querySelector("#generate");
-var charLength = 0;
+// var charLength = 0;
 
 // Add event listener to generate button to detect click
-generateBtn.addEventListener("click", genPassword);
+genBtn.addEventListener("click", genPassword);
 
 // Click starts the following generator function
 function genPassword() {
   var length = charLength();
   var charString = writePassword();
-  var product = "";
-  // For loop to generate a random password character by character until the length reaches the user-specified choice of length.
+  var genPassword = "";
   for (i = 0; i <= length; i++) {
     randomNum = Math.min(Math.floor(Math.random() * 100), charString.length - 1)
-    genPass += charString[randomNum];
+    genPassword += charString[randomNum];
   }
   displayPassword(genPassword);
 }
@@ -62,7 +61,7 @@ function writePassword() {
 function displayPassword(password) {
   var passText = document.querySelector("#password");
   console.log(password);
-  password.value = password;
+  passText.value = password;
 }
 
 /* 
