@@ -1,30 +1,42 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var genBtn = document.querySelector("#generate");
 var charLength = 0;
-// the variable "charNum" is a number value generated as the result of the charNum function below
 
-// Write password to the #password input
+// Add event listener to generate button to detect click
+generateBtn.addEventListener("click", genPassword);
+
+// Click starts the following generator function
+function genPassword() {
+  var length = charLength();
+  var charString = writePassword();
+  var product = "";
+
+  for (i = 0; i <= length; i++) {
+    randomNum = Math.min(Math.floor(Math.random() * 100), charString.length - 1)
+    genPass += charString[randomNum];
+  }
+  displayPassword(genPassword);
+}
+
+function charLength() {
+  var inputLength = Number(prompt("Choose amount of characters, between 8 - 128."));
+  if (inputLength < 8 || inputLength > 128) {
+    alert("Error: Must choose number between 8 - 128.")
+    charLength();
+  }
+  return inputLength;
+}
+
+// Giving the user the character choices and funneling them into the machine.
+
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var charUpper = "abcdefghijklmnopqrstuvwxyz";
+  var charLower = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var charNum = "1234567890";
+  var charSym = ``
 
-  passwordText.value = password;
-
+  var charString = "";
 }
-
-function setCharNum() {
-
-}
-
-function generatePassword() {
-
-}
-
-
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 /* 
 
@@ -50,8 +62,10 @@ FUNCTIONS
     > length
     > types of characters
   function to put all of that into a string
-  function to generate password
   function to display password
-  need check boxes
+  function to display popup windows for each criteria
+  function to necessitate selection of character type before continuing
+  function to generate password
+  function to either display the pw to the page
 
 */
