@@ -29,14 +29,29 @@ generateBtn.addEventListener("click", writePassword);
 /* 
 
 VARIABLES
+  var that IS the password
+  var that is a button to generate ^password^
+  var for prompts for password criteria
   var to hold each password criteria
+  var to hold generated random number (decided by user from one of four prompts) :
+    > case of characters (uppercase and lowercase)
     > length (text field)
     > types of characters (drop down menu)
   var to hold the charLength 
   var to hold the charType
+  var to hold uppercase or lowercase
+
 
 
 FUNCTIONS
-  function to handle button press and to reveal prompts for password criteria
+  function to handle button press
+  functions to reveal prompts for password criteria :
+    > case of characters
+    > length
+    > types of characters
+  function to put all of that into a string
+  function to generate password
+  function to display password
+  need check boxes
 
 */
