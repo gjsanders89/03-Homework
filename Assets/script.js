@@ -23,14 +23,21 @@ function charLength() {
     alert("Error: Must choose number between 8 - 128.")
     charLength();
   }
+  // if (inputLength != Number) {
+  //   alert("Error: Input must be a number.")
+  //   charLength();
+  // }
+  // else {
+  //   return inputLength;
+  // }
   return inputLength;
 }
 
 // Giving the user the character choices and funneling them into the machine.
 
 function writePassword() {
-  var charUpper = "abcdefghijklmnopqrstuvwxyz";
-  var charLower = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var charLower = "abcdefghijklmnopqrstuvwxyz";
   var charNum = "1234567890";
   var charSym = `!"#$%&'()*+,-./:;<=>?@[\]^_{|}~`;
 
